@@ -1,29 +1,35 @@
-# game-of-life-2
+### A Vue component to render a [John Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+Demo
 
-## Project setup
+#### Install
 ```
-yarn install
+npm install vue-game-of-life --save
 ```
+#### Example
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+Import and register the plugin as usual
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+```javascript
+import GameOfLife from 'vue-game-of-life'
 
-### Run your tests
-```
-yarn run test
+Vue.use(GameOfLife);
 ```
 
-### Lints and fixes files
-```
-yarn run lint
+Then use it as you would with any component
+
+```html
+<game-of-life></game-of-life>
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Configuration
+
+The following props can be sent to the component:
+
+| Name          | Type          | Default           | Desctiption                       |
+|---------      |-----------    |---------------    |--------------------------------   |
+| cols          | Number        | 100               | Number of columns                 |
+| rows          | Number        | 100               | Number of rows      |
+| cellWidth     | Number        | 5                 | Width of each cell              |
+| tickInterval  | Number        | 100               | Time between each 'tick' in milliseconds                      |
+| color         | String        | #ddd              | Color to display the alive cells          |
+| alivePercent  | Number        | 10                | Initial percent of alive cells                     |
