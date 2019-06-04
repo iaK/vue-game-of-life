@@ -1,11 +1,13 @@
 ### A Vue component to render a [John Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-Demo
+[Demo](https://happy-jang-01427a.netlify.com/)
+
+![Game of life](http://landslide-design.se/gameoflife.png "Game of life")
 
 #### Install
 ```
 npm install vue-game-of-life --save
 ```
-#### Example
+#### How to use
 
 Import and register the plugin as usual
 
@@ -33,3 +35,17 @@ The following props can be sent to the component:
 | tickInterval  | Number        | 100               | Time between each 'tick' in milliseconds                      |
 | color         | String        | #ddd              | Color to display the alive cells          |
 | alivePercent  | Number        | 10                | Initial percent of alive cells                     |
+
+### Getting data out
+
+You can also get some data out of the component, such as number of ticks, cells alive and dead cells.
+
+Do that using a slot scope
+
+example:
+
+```html
+<GameOfLife v-slot:default="{ ticks, cellsAlive, cellsDead }">
+    Tick: {{ ticks }}, Alive: {{ cellsAlive }}, Dead: {{ cellsDead }}
+</GameOfLife>
+```

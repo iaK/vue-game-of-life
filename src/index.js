@@ -1,7 +1,8 @@
-import GameOfLife from './GameOfLife.vue';
+import GameOfLife from './GameOfLife.vue'
 
-export default {
-    install(Vue, options) {
+export function install(Vue, options) {
         Vue.component('game-of-life', GameOfLife);
-    }
 };
+
+export default GameOfLife;
+
